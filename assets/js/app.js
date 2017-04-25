@@ -16,3 +16,37 @@ window.addEventListener("load",function(){
  slideHome();
 
 });
+//Validar formulario de contacto
+function tooltip() {
+  var classTooltip = document.getElementsByClassName("tooltip");
+  for(var i = 0; i < classTooltip.length;i++){
+    var tooltip = document.createElement("span");
+    tooltip.classList.add("msj-error");
+    classTooltip[i].appendChild(tooltip);
+  }
+}
+var msjError = document.getElementsByClassName("msj-error");
+function validacion(input,indice,mensaje,validar) {
+  if (input.value == "") {
+    msjError[indice].style.display="block";
+    msjError[indice].innerHTML = mensaje;
+  }
+  else{
+    msjError[indice].style.display="none";
+  }
+}
+var input = document.getElementsByClassName("data-contacto");
+tooltip();
+
+input[0].addEventListener("blur",function () {
+  validacion(input[0],0,"Ingrese un nombre válido");
+});
+input[1].addEventListener("blur",function () {
+  validacion(input[1],1,"Ingrese una apellido válido");
+});
+input[2].addEventListener("blur",function () {
+  validacion(input[2],2,"Ingrese una dirección de email válida");
+});
+input[3].addEventListener("blur",function () {
+  validacion(input[3],3,"Ingrese un numero telefónico válido");
+});
