@@ -1,0 +1,28 @@
+header{
+  background-color: orange;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.header-color{
+  background-color: rgb(102, 155, 231);
+}
+ul{
+  text-decoration: none;
+}
+li{
+  display: inline-block;
+  margin:10px 20px;
+}
+li a{
+  text-decoration: none;
+  color: white;
+}
+section #home{
+  background-color: lightblue;
+}
+section #us{
+  background-color: rgb(146, 199, 104);
+}
