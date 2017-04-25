@@ -11,6 +11,7 @@ function slideHome(){
     setTimeout(slideHome, 1000);
 }
 
+
 window.addEventListener("load",function(){
 
  slideHome();
