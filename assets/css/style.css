@@ -1,7 +1,10 @@
+/*Estilo general*/
 html {
   background-color: #333;
   font-family: sans-serif;
 }
+
+/*HEADER*/
 header{
   background-color: orange;
   position: fixed;
@@ -15,6 +18,7 @@ header{
 .header-color{
   background-color: rgba(102, 155, 231, 0.7);
 }
+/*Logo en el header*/
 header img {
   display: inline-block;
   width: 50px;
@@ -22,6 +26,7 @@ header img {
   margin-top: 20px;
   margin-left: 20px;
 }
+/*Opciones del menú*/
 ul{
   display: inline-block;
   text-decoration: none;
@@ -35,29 +40,38 @@ li a{
   color: white;
   font-family: 'Lobster', cursive;
 }
+/*Fin HEADER*/
+
+/*HOME*/
 section #home{
   background-color: lightblue;
   margin-top: 80px;
 }
+/*Contenedor slide*/
 #home #slide {
   width: 800px;
   max-width: 100%;
   height: 500px;
   margin: 80px auto;
 }
+/*El slide*/
 #slide .galeria-slide {
   width: 100%;
   height: 100%;
 }
+/*Fin HEADER*/
 
+/*INFO-US*/
+/*Estilo general de Us*/
 #us{
-  position: relative;
+  position: relative; /*Para ubicar el logo y texto*/
 }
 #us .contenedor {
   width: 100%;
   height: 600px;
   display: inline-block;
 }
+/*El logo*/
 .contenedor .logo {
   display: inline-block;
   margin-top: 10px;
@@ -70,15 +84,30 @@ section #home{
   width: 400px;
   max-width: 100%;
 }
+/*El texto*/
 .info-us {
   position: absolute;
-  top: 15%;
+  top: 18%;
   right: 14%;
   width: 500px;
   margin-left: 20px;
-
 }
 .info-us h4 {
+  font-family: 'Lobster', cursive;
+  font-size: 2.5rem;
+  margin: 35px 0;
+}
+.info-us p {
+  text-align: justify;
+  font-size: 1.2rem;
+}
+/*Fin INFO-US*/
+
+#menu {
+  text-align: center;
+  width: 100%;
+}
+#menu .menu-texto {
   font-family: 'Lobster', cursive;
   font-size: 2.5rem;
 }
