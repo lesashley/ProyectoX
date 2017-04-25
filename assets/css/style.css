@@ -1,7 +1,10 @@
 /*Estilo general*/
 html {
   background-color: #333;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /*HEADER*/
@@ -21,14 +24,16 @@ header{
 /*Logo en el header*/
 header img {
   display: inline-block;
-  width: 50px;
-  height: 50px;
-  margin-top: 20px;
-  margin-left: 20px;
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin-top: 5px;
+  margin-left: 30px;
 }
 /*Opciones del menú*/
 ul{
   display: inline-block;
+  float: left;
   text-decoration: none;
 }
 li{
@@ -39,19 +44,19 @@ li a{
   text-decoration: none;
   color: white;
   font-family: 'Lobster', cursive;
+  font-size: 1.5rem;
 }
 /*Fin HEADER*/
 
 /*HOME*/
 section #home{
   background-color: lightblue;
-  margin-top: 80px;
 }
 /*Contenedor slide*/
 #home #slide {
-  width: 800px;
+  width: 850px;
   max-width: 100%;
-  height: 500px;
+  height: 560px;
   margin: 80px auto;
 }
 /*El slide*/
@@ -90,6 +95,7 @@ section #home{
   top: 18%;
   right: 14%;
   width: 500px;
+  max-width: 100%;
   margin-left: 20px;
 }
 .info-us h4 {
@@ -103,31 +109,71 @@ section #home{
 }
 /*Fin INFO-US*/
 
+/*LA CARTA*/
 #menu {
-  text-align: center;
+  background: url(../images/madera2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 100%;
+  color: #35332B;
+  font-stretch: extra-expanded;
+  display: inline-block;
+}
+.menu-texto{
+  text-align: center;
 }
 .menu-texto h4 {
   font-family: 'Lobster', cursive;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
+  margin: 35px auto;
 }
 .menu-texto p {
-  text-align: justify;
-  font-size: 1.2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 10px auto 35px 0;
 }
-
+#menu h5 {
+  font-family: 'Lobster', cursive;
+  font-size: 2rem;
+  margin: 45px auto 0 auto;
+}
 .menu-platos {
   display: inline-block;
+  text-align: center;
+  margin: 10px 50px;
 }
+.menu-platos .div-plato{
+  display: inline-block;
+  margin: 7px 5px 3px 5px;
+  width: 250px;
+  height: 160px;
+  border-radius: 10%;
+  border: 4px solid #333;
+}
+.div-plato img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+}
+/*ARMA TU COMBO*/
 
+/*Fin LA CARTA*/
+
+/*UBÍCANOS*/
 section #contacto{
   width: 100%;
 }
-
+/*Mapa*/
 #contacto .ubicacion{
-width: 100%;
-margin: 50px 0;
-text-align: center;
+  width: 100%;
+  margin: 50px 0;
+  text-align: center;
+}
+.ubicacion h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 2.5rem;
 }
 .mapa{
   margin: 0 auto;
@@ -137,6 +183,7 @@ text-align: center;
   border-radius: 20px;
   box-shadow:3px 3px 10px 2px lightgray;
 }
+/*Formulario de contacto*/
 #contacto .form-contacto{
   margin: 0 auto;
   width: 800px;
@@ -144,9 +191,9 @@ text-align: center;
   padding: 10px 20px;
   box-sizing: border-box;
 }
-
-.form-contacto h2{
-  line-height: 0;
+.form-contacto h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 2.5rem;
 }
 .content-contacto{
   width: 380px;
@@ -163,7 +210,6 @@ text-align: center;
   color: black;
   font-size: 14px;
 }
-
 .content-mensaje{
   top: 15px;
   position: relative;
@@ -177,7 +223,9 @@ text-align: center;
 .form-contacto .button-contact{
   text-align: center;
 }
+/*Fin UBÍCANOS*/
 
+/*FOOTER*/
 footer{
   width: 100%;
   height: 100px;
@@ -200,3 +248,4 @@ footer .contenedor-footer{
 .text-footer{
   color: white;
 }
+/*Fin FOOTER*/
