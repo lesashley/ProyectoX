@@ -82,4 +82,4 @@ function drop(param) {
   param.target.appendChild(document.getElementById(data));
 }
 
-document.getElementById("menu1").addEventListener("dragstart")
+// document.getElementById("menu1").addEventListener("dragstart")

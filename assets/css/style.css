@@ -167,14 +167,7 @@ section #home{
 }
 /*ARMA TU COMBO*/
 #combo {
-  /*background: url(../images/madera1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 90%;
-  margin: 0 5%;*/
   color: #35332B;
-  /*font-stretch: extra-expanded;*/
   display: inline-block;
 }
 #combo .arma-logo {
@@ -287,12 +280,12 @@ section #contacto{
 /*Validación*/
 .tooltip span{
   display: none;
-  background-color: rgba(213, 196, 196, 0.72);
+  background-color: rgba(102, 155, 231, 0.7);
   padding: 5px;
   position: absolute;
-  left: 68%;
-  margin-top: -30px;
-  width: 200px;
+  left: 64.5%;
+  margin-top: -33px;
+  width: 220px;
   color: white;
   border-radius: 10px;
   transition: visibility 1 ease;
@@ -302,7 +295,7 @@ section #contacto{
   width: 0;
   height: 0;
   border-top: 5px solid transparent;
-  border-right: 10px solid rgba(51,51,51,0.8);
+  border-right: 10px solid rgba(102, 155, 231, 0.7);
   border-bottom: 5px solid transparent;
   position: absolute;
   right: 100%;
@@ -326,6 +319,9 @@ section #contacto{
 }
 .social-menu ul li a{
   font-size: 2.5rem;
+}
+.social-menu ul li a:hover{
+  color: rgba(102, 155, 231, 0.7);
 }
 /*Fin SOCIAL*/
 
