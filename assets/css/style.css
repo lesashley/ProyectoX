@@ -118,7 +118,7 @@ section #home{
 
 /*LA CARTA*/
 #menu {
-  background: url(../images/madera1.jpg);
+  background: url(../images/madera2.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -167,14 +167,7 @@ section #home{
 }
 /*ARMA TU COMBO*/
 #combo {
-  /*background: url(../images/madera1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 90%;
-  margin: 0 5%;*/
   color: #35332B;
-  /*font-stretch: extra-expanded;*/
   display: inline-block;
 }
 #combo .arma-logo {
@@ -251,9 +244,11 @@ section #contacto{
 }
 /*Formulario de contacto*/
 #contacto .form-contacto{
+  background-color: #333;
   margin: 0 auto;
   width: 600px;
   border: 1px solid white;
+  border-radius: 5%;
   padding: 10px 20px;
   box-sizing: border-box;
   text-align: center;
