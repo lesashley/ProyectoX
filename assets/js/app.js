@@ -1,14 +1,18 @@
-var slideIndex = 0;
-carousel();
-
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("galeria-slide");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > x.length) {slideIndex = 1}
-    x[slideIndex-1].style.display = "block";
-    setTimeout(carousel, 2000); // Change image every 2 seconds
+//Para la galería del HOME
+var fotos = 0;
+function slideHome(){
+    var slides = document.getElementsByClassName("galeria-slide");
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";}
+    fotos++;
+    if (fotos > slides.length){
+      fotos = 1;}
+    slides[fotos-1].style.display = "block";
+    setTimeout(slideHome, 1000);
 }
+
+window.addEventListener("load",function(){
+
+ slideHome();
+
+});
