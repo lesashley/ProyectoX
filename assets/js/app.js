@@ -50,7 +50,7 @@ input[3].addEventListener("blur",function () {
   validacion(input[3],3,"Ingrese un numero telefónico válido");
 });
 
-//Ocultar scroll
+//Ocultar header con evento SCROLL
 var endScroll = 0;
 window.addEventListener("scroll", function () {
   var header = document.getElementById("header-menu");
@@ -65,3 +65,21 @@ window.addEventListener("scroll", function () {
   endScroll = scroll;
 }
 ,false);
+
+//Arrastar las opciones del menú para armar tu combo
+
+function sueltaMenu(elem) {
+    elem.preventDefault();
+}
+
+function drag(elem) {
+    elem.dataTransfer.setData("text", elem.target.id);
+}
+
+function drop(param) {
+    param.preventDefault();
+    var data = param.dataTransfer.getData("text");
+  param.target.appendChild(document.getElementById(data));
+}
+
+document.getElementById("menu1").addEventListener("dragstart")
