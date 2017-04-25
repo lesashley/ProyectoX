@@ -40,3 +40,48 @@ section #home{
 section #us{
   background-color: rgb(146, 199, 104);
 }
+
+section #contacto{
+  width: 100%;
+}
+#contacto .form-contacto{
+  margin: 0 auto;
+  width: 800px;
+  border: 1px solid white;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.form-contacto h2{
+  line-height: 0;
+}
+.content-contacto{
+  width: 380px;
+  margin: 10px 0;
+  display: inline-block;
+}
+.content-contacto input{
+  margin: 6px 0;
+  width: 300px;
+  height: 20px;
+}
+::placeholder{
+  padding: 5px;
+  color: black;
+  font-size: 14px;
+}
+
+.content-mensaje{
+  top: 15px;
+  position: relative;
+  right: -10px;
+  float: right;
+  width: 340px;
+  display: inline-block;
+}
+.content-mensaje textarea{
+  height: 130px;
+}
+.form-contacto .button-contact{
+  text-align: center;
+}
