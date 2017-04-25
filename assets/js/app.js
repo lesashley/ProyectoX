@@ -16,7 +16,7 @@ window.addEventListener("load",function(){
  slideHome();
 
 });
-//Validar formulario de contacto
+//Validacion de formulario de contacto
 function tooltip() {
   var classTooltip = document.getElementsByClassName("tooltip");
   for(var i = 0; i < classTooltip.length;i++){
@@ -50,3 +50,19 @@ input[2].addEventListener("blur",function () {
 input[3].addEventListener("blur",function () {
   validacion(input[3],3,"Ingrese un numero telefónico válido");
 });
+
+//Ocultar scroll
+var endScroll = 0;
+window.addEventListener("scroll", function () {
+  var header = document.getElementById("header-menu");
+  var scroll = window.pageYOffset || document.body.scrollTop;
+  if (scroll > endScroll) {
+    header.classList.remove("header-color");
+    header.style.opacity = 0;
+  } else{
+    header.classList.add("header-color");
+    header.style.opacity = 1;
+  }
+  endScroll = scroll;
+}
+,false);
