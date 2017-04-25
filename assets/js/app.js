@@ -11,12 +11,10 @@ function slideHome(){
     setTimeout(slideHome, 1000);
 }
 
-
 window.addEventListener("load",function(){
-
  slideHome();
-
 });
+
 //Validacion de formulario de contacto
 function tooltip() {
   var classTooltip = document.getElementsByClassName("tooltip");
