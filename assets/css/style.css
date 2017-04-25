@@ -44,6 +44,20 @@ section #us{
 section #contacto{
   width: 100%;
 }
+
+#contacto .ubicacion{
+width: 100%;
+margin: 50px 0;
+text-align: center;
+}
+.mapa{
+  margin: 0 auto;
+}
+.mapa img{
+  width: 600px;
+  border-radius: 20px;
+  box-shadow:3px 3px 10px 2px lightgray;
+}
 #contacto .form-contacto{
   margin: 0 auto;
   width: 800px;
@@ -74,7 +88,6 @@ section #contacto{
 .content-mensaje{
   top: 15px;
   position: relative;
-  right: -10px;
   float: right;
   width: 340px;
   display: inline-block;
@@ -89,8 +102,6 @@ section #contacto{
 footer{
   width: 100%;
   height: 100px;
-  position: relative;
-  bottom: -10px;
   background-color: lightblue;
 }
 footer .contenedor-footer{
@@ -98,7 +109,7 @@ footer .contenedor-footer{
   text-align: center;
 }
 .icons{
-  margin: 30px;
+  margin: 30px 0;
   position: relative;
   top: 20px;
   font-size: 30px;
@@ -108,5 +119,4 @@ footer .contenedor-footer{
   color:rgb(45, 111, 42);
 }
 .text-footer{
-  /*font-size: 20px;*/
 }
