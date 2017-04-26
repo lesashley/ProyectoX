@@ -70,14 +70,13 @@ window.addEventListener("load",function(){
   document.getElementsByClassName("menu-platos")[0].appendChild(fragment);
 });
 
-//////////////////////////////////////////////////////////
 //Arrastar las opciones del menú para armar tu combo
+var precios = 0;
 function drag(ev) {
-  // console.log("hola");
   ev.dataTransfer.setData("text/plain", ev.target.id);
+  ev.dataTransfer.setData("text/plain", ev.target.value);
   ev.dataTransfer.dropEffect = "copyMove";
 }
-
 function over(ev) {
   ev.preventDefault();
   ev.dataTransfer.dropEffect = "copyMove"
@@ -87,23 +86,13 @@ function drop(ev) {
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
 }
-
-//Precio del combo
-var costo = document.getElementById("precio-combo")
-costo.value = 0;
-
-var suman = document.getElementsByClassName("arma-elegidos");
-function precio(suman){
-  if(suman.lenght = 0){
-    costo.value = 0;
-    costo.innerHTML = "S/ "+costo.value
-  }
-  if(suman.lenght != 0){
-    suman[0].value
-  }
+function dragend(ev) {
+  ev.preventDefault();
+  var valor = ev.dataTransfer.getData("valor");
+  ev.target.
 }
 
-//////////////////////////////////////////////////////////////
+
 //Validacion de formulario de contacto
 function tooltip() {
   var classTooltip = document.getElementsByClassName("tooltip");
@@ -138,6 +127,7 @@ input[2].addEventListener("blur",function () {
 input[3].addEventListener("blur",function () {
   validacion(input[3],3,"Ingrese un numero telefónico válido");
 });
+
 
 //Ocultar header con evento SCROLL
 var endScroll = 0;
