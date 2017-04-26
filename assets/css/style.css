@@ -282,14 +282,13 @@ section #home{
 
 /*GIF*/
 #gif {
-  margin: 15px 5%;
-  width: 90%;
-  height: 300px;
+  margin: 80px 30px;
+  width: 95%;
+  height: 580px;
   background-image: url(../images/animated.gif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  opacity: 0.8;
   text-align: center;
 }
 #gif h2 {
