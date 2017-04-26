@@ -156,15 +156,14 @@ window.addEventListener("scroll", function () {
     header.classList.add("header-color");
     header.style.opacity = 1;
     menuLateral.style.opacity = 0;
+    footer.style.opacity=0;
   }
   if ( scroll > 50) {
     menuLateral.style.opacity=1;
   }
   endScroll = scroll;
+  if ((window.innerHeight + window.pageYOffset ) >= document.body.offsetHeight) {
+      footer.style.opacity=1;
+    }
 }
 ,false);
-
-//En modo de prueb NO BORRAR
-// if (document.body.scrollIntoView(false)) {
-//   footer.style.opacity=1;
-// }

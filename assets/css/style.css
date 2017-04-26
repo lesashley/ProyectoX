@@ -12,6 +12,7 @@ html {
   box-sizing: border-box;
   color: white;
   z-index: 1;
+  padding-bottom: 200px;
 }
 
 /*HEADER*/
@@ -332,6 +333,7 @@ section #contacto{
   box-sizing: border-box;
   text-align: center;
 }
+
 .form-contacto h2 {
   font-family: 'Lobster', cursive;
   font-size: 2.5rem;
@@ -425,13 +427,14 @@ section #contacto{
 
 /*FOOTER*/
 footer{
-  opacity: 1;
+  opacity: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  /*position: fixed;*/
+  position: fixed;
   width: 100%;
   background-color: rgba(102, 155, 231, 0.7);
+  transition: all 0.4s ease;
 }
 footer .contenedor-footer{
   margin: 0 auto;
