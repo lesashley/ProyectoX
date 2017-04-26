@@ -143,14 +143,27 @@ input[3].addEventListener("blur",function () {
 var endScroll = 0;
 window.addEventListener("scroll", function () {
   var header = document.getElementById("header-menu");
+  var menuLateral = document.getElementsByClassName("social-menu")[0];
+  var footer = document.getElementById("footer");
   var scroll = window.pageYOffset || document.body.scrollTop;
   if (scroll > endScroll) {
     header.classList.remove("header-color");
     header.style.opacity = 0;
-  } else{
+    menuLateral.style.opacity=1;
+  }
+  else{
     header.classList.add("header-color");
     header.style.opacity = 1;
+    menuLateral.style.opacity = 0;
+  }
+  if ( scroll > 50) {
+    menuLateral.style.opacity=1;
   }
   endScroll = scroll;
 }
 ,false);
+
+//En modo de prueb NO BORRAR
+// if (document.body.scrollIntoView(false)) {
+//   footer.style.opacity=1;
+// }

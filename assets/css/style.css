@@ -283,7 +283,6 @@ section #home{
   background-size: cover;
   opacity: 0.8;
   text-align: center;
-  padding: 15px;
 }
 #gif h2 {
   font-family: 'Lobster', cursive;
@@ -342,8 +341,9 @@ section #contacto{
 }
 ::placeholder{
   padding: 5px;
-  color: black;
+  color: rgb(106, 106, 106);
   font-size: 14px;
+  font-family: 'Lato', sans-serif;
 }
 .content-mensaje textarea{
   height: 130px;
@@ -378,6 +378,10 @@ section #contacto{
 /*Fin UBÍCANOS*/
 
 /*Social Menu Lateral*/
+.social-menu{
+  opacity: 0;
+  transition: all 0.8s ease;
+}
 .social-menu ul{
   float: right;
   position: fixed;
@@ -401,8 +405,12 @@ section #contacto{
 
 /*FOOTER*/
 footer{
+  opacity: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
   width: 100%;
-  height: 100px;
   background-color: rgba(102, 155, 231, 0.7);
 }
 footer .contenedor-footer{
@@ -410,7 +418,7 @@ footer .contenedor-footer{
   text-align: center;
 }
 .icons{
-  margin: 30px 0;
+  margin: 20px 0;
   position: relative;
   top: 20px;
   font-size: 30px;
@@ -421,5 +429,6 @@ footer .contenedor-footer{
 }
 .text-footer{
   color: white;
+  margin: 40px 0;
 }
 /*Fin FOOTER*/
