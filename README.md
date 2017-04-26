@@ -1,6 +1,6 @@
 # ProyectoX - Sprint03/Leccion25
 ### El proyecto consiste en aplicar temas de HTML, CSS y JS 
-*** Requisitos:
+ Requisitos:
  - Aplicar 2 eventos vistos en clase
  - Aplicar como mínimo 2 eventos no vistos en clase.
  - Usar callbacks
@@ -33,11 +33,15 @@ function drop(ev) {
 ```
 ![Alt text](/assets/images/combo-comeachina.png?raw=true)
 
-Funciones de eventos utilizados en clase:
--Usados en la sección contacto al momento de la validación y al inicio de la pagina
+Funciones de eventos utilizados en clase: BLUR Y SCROLL
+- Usados en la sección contacto al momento de la validación y al inicio de la pagina
 
 ![Alt text](/assets/images/js-valida-comeachina.png?raw=true)
 
 -----------------------------------------------------
+
+Para acceder a la página haz [clic aquí](https://lesashley.github.io/ProyectoX/)
+
+---------------------------------------------------------
 Creado por L. Avendaño y L. Gutierrez
 
