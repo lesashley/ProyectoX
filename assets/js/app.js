@@ -11,8 +11,58 @@ function slideHome(){
     setTimeout(slideHome, 1000);
 }
 
+//Chinas Clásicas
+function Carta(name,id){
+  this.name = name;
+  this.id = id;
+  this.src = "assets/images/"+id+".jpg";
+}
+
+function platoCarta(obj){
+  var div = document.createElement("div");
+  div.setAttribute("class","div-plato");
+  var img = document.createElement("img");
+  img.setAttribute("src",obj.src);
+  img.setAttribute("id",obj.id);
+  img.setAttribute("alt",obj.name);
+  img.setAttribute("class","img-plato");
+  var span = document.createElement("span");
+  span.innerText = obj.name
+  span.setAttribute("class","span-plato");
+
+  div.appendChild(img);
+  div.appendChild(span);
+  return div;
+}
+
+var creaCarta = [];
+var carta1 = new Carta("pollo en brochetas","menu1");
+creaCarta.push(carta1);
+var carta2 = new Carta("hamburguesa clasica","menu2");
+creaCarta.push(carta2);
+var carta3 = new Carta("salchipapa oriental","menu3");
+creaCarta.push(carta3);
+var carta4 = new Carta("tallarin saltado","menu4");
+creaCarta.push(carta4);
+var carta5 = new Carta("siu mai","menu5");
+creaCarta.push(carta5);
+var carta6 = new Carta("bolitas de pollo","menu6");
+creaCarta.push(carta6);
+var carta7 = new Carta("combo wrapper","menu7");
+creaCarta.push(carta7);
+var carta8 = new Carta("gota de lluvia","menu8");
+creaCarta.push(carta8);
+
+var fragment = document.createDocumentFragment();
+creaCarta.forEach(function(e){
+  fragment.appendChild(platoCarta(e));
+})
+
 window.addEventListener("load",function(){
  slideHome();
+ document.getElementsByClassName("menu-platos")[0].appendChild(fragment);
+
+
 });
 
 //Validacion de formulario de contacto

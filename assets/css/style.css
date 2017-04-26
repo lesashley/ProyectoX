@@ -74,6 +74,7 @@ section #home{
 /*Fin HEADER*/
 
 /*INFO-US*/
+
 /*Estilo general de Us*/
 #us{
   position: relative; /*Para ubicar el logo y texto*/
@@ -202,8 +203,8 @@ section #home{
 
 /*GIF*/
 #gif {
-  margin: 15px 0;
-  width: 100%;
+  margin: 15px 5%;
+  width: 90%;
   height: 300px;
   background-image: url(../images/animated.gif);
   background-repeat: no-repeat;
