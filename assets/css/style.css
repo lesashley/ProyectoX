@@ -58,26 +58,31 @@ li a{
 /*Fin HEADER*/
 
 /*HOME*/
+/*GIF*/
+#gif {
+  margin: 100px 30px;
+  width: 95%;
+  height: 620px;
+  background-image: url(../images/animated.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+#gif h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 5vw;
+  margin: 45px auto 0 auto;
+}
+/*fin*/
 section #home{
   background-color: lightblue;
 }
-/*Contenedor slide*/
-#slide {
-  width: 850px;
-  max-width: 100%;
-  height: 560px;
-  margin: 80px auto;
-}
-/*El slide*/
-#slide .galeria-slide {
-  width: 100%;
-  height: 100%;
-}
-/*Fin HEADER*/
+/*Fin HOME*/
 
 /*INFO-US*/
 /*#us{
-  position: relative; /*Para ubicar el logo y texto*/
+  position: relative;  /*Para ubicar el logo y texto*/
 }*/
 #us .contenedor {
   display: inline-block;
@@ -280,23 +285,19 @@ section #home{
 }
 /*Fin LA CARTA*/
 
-/*GIF*/
-#gif {
-  margin: 80px 30px;
-  width: 95%;
-  height: 580px;
-  background-image: url(../images/animated.gif);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  text-align: center;
+/*SLIDE*/
+#slide {
+  width: 850px;
+  max-width: 100%;
+  height: 560px;
+  margin: 80px auto;
 }
-#gif h2 {
-  font-family: 'Lobster', cursive;
-  font-size: 5vw;
-  margin: 45px auto 0 auto;
+/*El slide*/
+#slide .galeria-slide {
+  width: 100%;
+  height: 100%;
 }
-/*fin*/
+/*Fin SLIDE*/
 
 /*UBÍCANOS*/
 section #contacto{
