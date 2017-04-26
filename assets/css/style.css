@@ -143,7 +143,7 @@ section #home{
   font-weight: 600;
   margin: 10px auto 35px 0;
 }
-#menu h5 {
+.menu-platos h5 {
   font-family: 'Lobster', cursive;
   font-size: 2rem;
   margin: 45px auto 0 auto;
@@ -153,19 +153,48 @@ section #home{
   text-align: center;
   margin: 10px 50px;
 }
-.menu-platos .div-plato{
+.div-plato{
+  position: relative;
   display: inline-block;
   margin: 7px 5px 3px 5px;
   width: 250px;
   height: 160px;
   border-radius: 10%;
   border: 4px solid #333;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+}
+
+.div-plato img,
+.div-plato span {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  border-radius: 10%;
 }
 .div-plato img {
   width: 100%;
   height: 100%;
-  border-radius: 10%;
+  opacity: 1;
+  z-index: 10;
 }
+.div-plato span {
+  /*background-color: #333;*/
+  text-align: center;
+  width: 100%;
+  height: 70%;
+  opacity: 1;
+  padding-top: 52px;
+  font-family: 'Lobster', cursive;
+  font-size: 1.8rem;
+  z-index: 1;
+}
+.div-plato img:hover {
+  opacity: 0.4;
+}
+
 /*ARMA TU COMBO*/
 #combo {
   color: #35332B;
@@ -183,21 +212,63 @@ section #home{
   width: 100%;
   height: 100%;
 }
-#combo .arma-elegidos {
+#combo .arma-texto {
   display: inline-block;
   float: left;
-  background-color: #333;
+  color: white;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  width: 200px;
+  height: 160px;
+  margin-top: 70px;
+  margin-left: 60px;
+}
+.arma-texto span {
+  text-align: center;
+  margin:  40px 20px 20px 20px;
+  font-size: 20px;
+}
+.arma-texto img {
+  display: block;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  margin-left: 50px;
+}
+#combo .arma-elegidos {
+  display: inline-block;
+  text-align: center;
+  float: left;
+  border: 5px solid #333;
   color: white;
   width: 550px;
   height: 180px;
   border-radius: 5%;
-  margin: 30px 50px;
-  text-align: center;
+  margin: 30px 20px;
+}
+#combo .arma-elegidos img {
+  display: inline-block;
+  width: 190px;
+  height: 130px;
+  margin: 25px 10px 10px 10px;
+  border-radius: 10%;
 }
 #combo .arma-precio {
   display: inline-block;
+  text-align: center;
   float: left;
   color: white;
+  font-family: 'Lobster', cursive;
+  margin-top: 0;
+  margin-left: 50px;
+}
+#combo .arma-precio h2 {
+  font-size: 3rem;
+  margin: 30px 10px 10px;;
+}
+#combo .arma-precio h5 {
+  font-size: 2rem;
+  margin: 30px auto 0 auto;
 }
 /*Fin LA CARTA*/
 
