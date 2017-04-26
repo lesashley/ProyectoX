@@ -68,24 +68,27 @@ window.addEventListener("load",function(){
 });
 
 //Arrastar las opciones del menú para armar tu combo
-var n = 0;
+var sumaPrecio = 0;
 var costo = document.getElementById("precio-combo")
-function drag(ev) {
-  n += parseInt(ev.target.getAttribute("value"));
+
+function drag(ev){
+  sumaPrecio += parseInt(ev.target.getAttribute("value"));
   ev.dataTransfer.setData("text", ev.target.id);
   ev.dataTransfer.dropEffect = "copyMove";
-  if (n > 26) {
+  if (sumaPrecio > 26) {
     costo.innerText = "S/. ";
-    n = 0;
+    sumaPrecio = 0;
   }
   else {
-    costo.innerText = "S/. " + n;
+    costo.innerText = "S/. " + sumaPrecio;
   }
 }
+
 function over(ev) {
   ev.preventDefault();
   ev.dataTransfer.dropEffect = "copyMove"
 }
+
 function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
