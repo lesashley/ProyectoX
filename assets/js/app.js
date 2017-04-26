@@ -135,7 +135,7 @@ input[1].addEventListener("blur",function () {
   validacion(input[1],1,"Ingrese una apellido válido",/([A-Z]{1}[a-zñáéíóú]\D+)$/);
 });
 input[2].addEventListener("blur",function () {
-  validacion(input[2],2,"Ingrese una dirección de email válida",/\S+@\S+\.\S+/);
+  validacion(input[2],2,"Ingrese una correo válido",/\S+@\S+\.\S+/);
 });
 input[3].addEventListener("blur",function () {
   validacion(input[3],3,"Ingrese un numero telefónico válido",/([0-9])\d+\S/);
