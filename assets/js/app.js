@@ -1,15 +1,15 @@
 //Para la galería del HOME
-// var fotos = 0;
-// function slideHome(){
-//     var slides = document.getElementsByClassName("galeria-slide");
-//     for (var i = 0; i < slides.length; i++) {
-//       slides[i].style.display = "none";}
-//     fotos++;
-//     if (fotos > slides.length){
-//       fotos = 1;}
-//     slides[fotos-1].style.display = "block";
-//     setTimeout(slideHome, 1000);
-// }
+var fotos = 0;
+function slideHome(){
+    var slides = document.getElementsByClassName("galeria-slide");
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";}
+    fotos++;
+    if (fotos > slides.length){
+      fotos = 1;}
+    slides[fotos-1].style.display = "block";
+    setTimeout(slideHome, 1000);
+}
 
 //Chinas Clásicas
 var arrayCarta=[{name:"pollo en brochetas",id:"menu1", src: "assets/images/menu1.jpg",value:"8"},
@@ -63,7 +63,7 @@ crearCarta.carta.forEach(function(e){
 
 //Para Home y Chinas Clasicas
 window.addEventListener("load",function(){
-  // slideHome();
+  slideHome();
   document.getElementsByClassName("menu-platos")[0].appendChild(fragment);
 });
 

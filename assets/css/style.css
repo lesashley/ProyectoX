@@ -62,7 +62,7 @@ section #home{
   background-color: lightblue;
 }
 /*Contenedor slide*/
-#home #slide {
+#slide {
   width: 850px;
   max-width: 100%;
   height: 560px;
