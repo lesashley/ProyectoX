@@ -135,7 +135,6 @@ input[3].addEventListener("blur",function () {
 
 document.getElementsByClassName("button-contact")[0].addEventListener("click",function (e) {
   e.preventDefault();
-  alert(buenas);
   if(buenas >= 4){
     for(var i = 0; i < input.length; i++){
       input[i].value = "";
