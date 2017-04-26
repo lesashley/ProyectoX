@@ -115,7 +115,7 @@ function tooltip() {
 }
 
 var msjError = document.getElementsByClassName("msj-error");
-
+var buenas=0;
 function validacion(input,indice,mensaje,validar) {
   if (input.value == "" || !validar.test(input.value)) {
     msjError[indice].style.display="block";
@@ -123,24 +123,34 @@ function validacion(input,indice,mensaje,validar) {
   }
   else{
     msjError[indice].style.display="none";
+    buenas++;
   }
 }
 var input = document.getElementsByClassName("data-contacto");
 tooltip();
 
 input[0].addEventListener("blur",function () {
-  validacion(input[0],0,"Ingrese un nombre válido",/([A-Z]{1}[a-zñáéíóú]\D+)$/);
+  validacion(input[0],0,"Ingrese un nombre válido",/([a-zñáéíóú]\D+)$/);
 });
 input[1].addEventListener("blur",function () {
-  validacion(input[1],1,"Ingrese una apellido válido",/([A-Z]{1}[a-zñáéíóú]\D+)$/);
+  validacion(input[1],1,"Ingrese un apellido válido",/([a-zñáéíóú]\D+)$/);
 });
 input[2].addEventListener("blur",function () {
-  validacion(input[2],2,"Ingrese una correo válido",/\S+@\S+\.\S+/);
+  validacion(input[2],2,"Ingrese un correo válido",/\S+@\S+\.\S+/);
 });
 input[3].addEventListener("blur",function () {
   validacion(input[3],3,"Ingrese un numero telefónico válido",/([0-9])\d+\S/);
 });
 
+document.getElementsByClassName("button-contact")[0].addEventListener("click",function (e) {
+  e.preventDefault();
+  alert(buenas);
+  if(buenas >= 4){
+    for(var i = 0; i < input.length; i++){
+      input[i].value = "";
+    }
+  }
+})
 //Ocultar header con evento SCROLL
 var endScroll = 0;
 window.addEventListener("scroll", function () {
