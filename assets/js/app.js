@@ -113,9 +113,11 @@ function tooltip() {
     classTooltip[i].appendChild(tooltip);
   }
 }
+
 var msjError = document.getElementsByClassName("msj-error");
+
 function validacion(input,indice,mensaje,validar) {
-  if (input.value == "") {
+  if (input.value == "" || !validar.test(input.value)) {
     msjError[indice].style.display="block";
     msjError[indice].innerHTML = mensaje;
   }
@@ -127,16 +129,16 @@ var input = document.getElementsByClassName("data-contacto");
 tooltip();
 
 input[0].addEventListener("blur",function () {
-  validacion(input[0],0,"Ingrese un nombre válido");
+  validacion(input[0],0,"Ingrese un nombre válido",/([A-Z]{1}[a-zñáéíóú]\D+)$/);
 });
 input[1].addEventListener("blur",function () {
-  validacion(input[1],1,"Ingrese una apellido válido");
+  validacion(input[1],1,"Ingrese una apellido válido",/([A-Z]{1}[a-zñáéíóú]\D+)$/);
 });
 input[2].addEventListener("blur",function () {
-  validacion(input[2],2,"Ingrese una dirección de email válida");
+  validacion(input[2],2,"Ingrese una dirección de email válida",/\S+@\S+\.\S+/);
 });
 input[3].addEventListener("blur",function () {
-  validacion(input[3],3,"Ingrese un numero telefónico válido");
+  validacion(input[3],3,"Ingrese un numero telefónico válido",/([0-9])\d+\S/);
 });
 
 //Ocultar header con evento SCROLL
