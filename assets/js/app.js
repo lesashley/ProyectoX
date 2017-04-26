@@ -12,11 +12,25 @@ function slideHome(){
 }
 
 //Chinas Clásicas
-function Carta(name,id,value){
-  this.name = name;
-  this.id = id;
-  this.number = value;
-  this.src = "assets/images/"+id+".jpg";
+var arrayCarta=[{name:"pollo en brochetas",id:"menu1", src: "assets/images/menu1.jpg",value:"8"},
+{name: "hamburguesa clasica", id: "menu2", src: "assets/images/menu2.jpg",value:"10"},
+{name: "salchipapa oriental", id: "menu3", src: "assets/images/menu3.jpg",value:"8"},
+{name: "tallarin saltado", id: "menu4", src: "assets/images/menu4.jpg",value:"10"},
+{name: "siu mai", id: "menu5", src: "assets/images/menu5.jpg",value:"6"},
+{name: "bolitas de pollo", id: "menu6", src: "assets/images/menu6.jpg",value:"6"},
+{name: "combo wrapper", id: "menu7", src: "assets/images/menu7.jpg",value:"16"},
+{name: "gota de lluvia", id: "menu8", src: "assets/images/menu8.jpg",value:"6"}]
+
+function Carta(){
+  this.carta = arrayCarta;
+  this.addCarta = function (name, id ,value) {
+    this.carta.push({
+      name : name,
+      id : id,
+      value : value,
+      src : "assets/images/"+id+".jpg"
+    });
+  }
 }
 
 function platoCarta(obj){
@@ -31,7 +45,7 @@ function platoCarta(obj){
   img.setAttribute("class","img-plato");
   img.setAttribute("draggable","true");
   img.setAttribute("ondragstart","drag(event)");
-  img.setAttribute("value",obj.number);
+  img.setAttribute("value",obj.value);
   var span = document.createElement("span");
   span.innerText = obj.name
   span.setAttribute("class","span-plato");
@@ -41,26 +55,9 @@ function platoCarta(obj){
   return div;
 }
 
-var creaCarta = [];
-var carta1 = new Carta("pollo en brochetas","menu1","8");
-creaCarta.push(carta1);
-var carta2 = new Carta("hamburguesa clasica","menu2","10");
-creaCarta.push(carta2);
-var carta3 = new Carta("salchipapa oriental","menu3","8");
-creaCarta.push(carta3);
-var carta4 = new Carta("tallarin saltado","menu4","10");
-creaCarta.push(carta4);
-var carta5 = new Carta("siu mai","menu5","6");
-creaCarta.push(carta5);
-var carta6 = new Carta("bolitas de pollo","menu6","6");
-creaCarta.push(carta6);
-var carta7 = new Carta("combo wrapper","menu7","16");
-creaCarta.push(carta7);
-var carta8 = new Carta("gota de lluvia","menu8","6");
-creaCarta.push(carta8);
-
+var crearCarta = new Carta();
 var fragment = document.createDocumentFragment();
-creaCarta.forEach(function(e){
+crearCarta.carta.forEach(function(e){
   fragment.appendChild(platoCarta(e));
 })
 
@@ -70,14 +67,21 @@ window.addEventListener("load",function(){
   document.getElementsByClassName("menu-platos")[0].appendChild(fragment);
 });
 
-//////////////////////////////////////////////////////////
 //Arrastar las opciones del menú para armar tu combo
+var n = 0;
+var costo = document.getElementById("precio-combo")
 function drag(ev) {
-  // console.log("hola");
-  ev.dataTransfer.setData("text/plain", ev.target.id);
+  n += parseInt(ev.target.getAttribute("value"));
+  ev.dataTransfer.setData("text", ev.target.id);
   ev.dataTransfer.dropEffect = "copyMove";
+  if (n > 26) {
+    costo.innerText = "S/. ";
+    n = 0;
+  }
+  else {
+    costo.innerText = "S/. " + n;
+  }
 }
-
 function over(ev) {
   ev.preventDefault();
   ev.dataTransfer.dropEffect = "copyMove"
@@ -88,22 +92,6 @@ function drop(ev) {
   ev.target.appendChild(document.getElementById(data));
 }
 
-//Precio del combo
-var costo = document.getElementById("precio-combo")
-costo.value = 0;
-
-var suman = document.getElementsByClassName("arma-elegidos");
-function precio(suman){
-  if(suman.lenght = 0){
-    costo.value = 0;
-    costo.innerHTML = "S/ "+costo.value
-  }
-  if(suman.lenght != 0){
-    suman[0].value
-  }
-}
-
-//////////////////////////////////////////////////////////////
 //Validacion de formulario de contacto
 function tooltip() {
   var classTooltip = document.getElementsByClassName("tooltip");
