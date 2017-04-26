@@ -39,5 +39,7 @@ Funciones de eventos utilizados en clase:
 ![Alt text](/assets/images/js-valida-comeachina.png?raw=true)
 
 -----------------------------------------------------
+
+Para acceder a la página haz [clic aquí](https://lesashley.github.io/ProyectoX/)
 Creado por L. Avendaño y L. Gutierrez
 
