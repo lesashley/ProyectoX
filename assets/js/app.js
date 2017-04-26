@@ -12,11 +12,25 @@ function slideHome(){
 }
 
 //Chinas Clásicas
-function Carta(name,id,value){
-  this.name = name;
-  this.id = id;
-  this.number = value;
-  this.src = "assets/images/"+id+".jpg";
+var arrayCarta=[{name:"pollo en brochetas",id:"menu1", src: "assets/images/menu1.jpg",value:"8"},
+{name: "hamburguesa clasica", id: "menu2", src: "assets/images/menu2.jpg",value:"10"},
+{name: "salchipapa oriental", id: "menu3", src: "assets/images/menu3.jpg",value:"8"},
+{name: "tallarin saltado", id: "menu4", src: "assets/images/menu4.jpg",value:"10"},
+{name: "siu mai", id: "menu5", src: "assets/images/menu5.jpg",value:"6"},
+{name: "bolitas de pollo", id: "menu6", src: "assets/images/menu6.jpg",value:"6"},
+{name: "combo wrapper", id: "menu7", src: "assets/images/menu7.jpg",value:"16"},
+{name: "gota de lluvia", id: "menu8", src: "assets/images/menu8.jpg",value:"6"}]
+
+function Carta(){
+  this.carta = arrayCarta;
+  this.addCarta = function (name, id ,value) {
+    this.carta.push({
+      name : name,
+      id : id,
+      value : value,
+      src : "assets/images/"+id+".jpg"
+    });
+  }
 }
 
 function platoCarta(obj){
@@ -31,7 +45,7 @@ function platoCarta(obj){
   img.setAttribute("class","img-plato");
   img.setAttribute("draggable","true");
   img.setAttribute("ondragstart","drag(event)");
-  img.setAttribute("value",obj.number);
+  img.setAttribute("value",obj.value);
   var span = document.createElement("span");
   span.innerText = obj.name
   span.setAttribute("class","span-plato");
@@ -41,26 +55,9 @@ function platoCarta(obj){
   return div;
 }
 
-var creaCarta = [];
-var carta1 = new Carta("pollo en brochetas","menu1","8");
-creaCarta.push(carta1);
-var carta2 = new Carta("hamburguesa clasica","menu2","10");
-creaCarta.push(carta2);
-var carta3 = new Carta("salchipapa oriental","menu3","8");
-creaCarta.push(carta3);
-var carta4 = new Carta("tallarin saltado","menu4","10");
-creaCarta.push(carta4);
-var carta5 = new Carta("siu mai","menu5","6");
-creaCarta.push(carta5);
-var carta6 = new Carta("bolitas de pollo","menu6","6");
-creaCarta.push(carta6);
-var carta7 = new Carta("combo wrapper","menu7","16");
-creaCarta.push(carta7);
-var carta8 = new Carta("gota de lluvia","menu8","6");
-creaCarta.push(carta8);
-
+var crearCarta = new Carta();
 var fragment = document.createDocumentFragment();
-creaCarta.forEach(function(e){
+crearCarta.carta.forEach(function(e){
   fragment.appendChild(platoCarta(e));
 })
 
@@ -71,11 +68,19 @@ window.addEventListener("load",function(){
 });
 
 //Arrastar las opciones del menú para armar tu combo
-var precios = 0;
+var n = 0;
+var costo = document.getElementById("precio-combo")
 function drag(ev) {
-  ev.dataTransfer.setData("text/plain", ev.target.id);
-  ev.dataTransfer.setData("text/plain", ev.target.value);
+  n += parseInt(ev.target.getAttribute("value"));
+  ev.dataTransfer.setData("text", ev.target.id);
   ev.dataTransfer.dropEffect = "copyMove";
+  if (n > 26) {
+    costo.innerText = "S/. ";
+    n = 0;
+  }
+  else {
+    costo.innerText = "S/. " + n;
+  }
 }
 function over(ev) {
   ev.preventDefault();
@@ -86,12 +91,6 @@ function drop(ev) {
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
 }
-function dragend(ev) {
-  ev.preventDefault();
-  var valor = ev.dataTransfer.getData("valor");
-  ev.target.
-}
-
 
 //Validacion de formulario de contacto
 function tooltip() {
@@ -102,32 +101,44 @@ function tooltip() {
     classTooltip[i].appendChild(tooltip);
   }
 }
+
 var msjError = document.getElementsByClassName("msj-error");
+var buenas=0;
 function validacion(input,indice,mensaje,validar) {
-  if (input.value == "") {
+  if (input.value == "" || !validar.test(input.value)) {
     msjError[indice].style.display="block";
     msjError[indice].innerHTML = mensaje;
   }
   else{
     msjError[indice].style.display="none";
+    buenas++;
   }
 }
 var input = document.getElementsByClassName("data-contacto");
 tooltip();
 
 input[0].addEventListener("blur",function () {
-  validacion(input[0],0,"Ingrese un nombre válido");
+  validacion(input[0],0,"Ingrese un nombre válido",/([a-zñáéíóú]\D+)$/);
 });
 input[1].addEventListener("blur",function () {
-  validacion(input[1],1,"Ingrese una apellido válido");
+  validacion(input[1],1,"Ingrese un apellido válido",/([a-zñáéíóú]\D+)$/);
 });
 input[2].addEventListener("blur",function () {
-  validacion(input[2],2,"Ingrese una dirección de email válida");
+  validacion(input[2],2,"Ingrese un correo válido",/\S+@\S+\.\S+/);
 });
 input[3].addEventListener("blur",function () {
-  validacion(input[3],3,"Ingrese un numero telefónico válido");
+  validacion(input[3],3,"Ingrese un numero telefónico válido",/([0-9])\d+\S/);
 });
 
+document.getElementsByClassName("button-contact")[0].addEventListener("click",function (e) {
+  e.preventDefault();
+  alert(buenas);
+  if(buenas >= 4){
+    for(var i = 0; i < input.length; i++){
+      input[i].value = "";
+    }
+  }
+})
 
 //Ocultar header con evento SCROLL
 var endScroll = 0;
